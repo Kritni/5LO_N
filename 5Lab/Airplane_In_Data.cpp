@@ -3,10 +3,10 @@
 #include <string>
 #include <iostream>
 
-void Airplane::In_Data(ifstream& ifst) {
+void Airplane::In_Data(ifstream& Ifst) {
     string Temp_Str = ""; //Временный буфер для чтения данных из файла
 
-    getline(ifst, Temp_Str); //Чтение дальности полета
+    getline(Ifst, Temp_Str); //Чтение дальности полета
 
     if (Temp_Str == "") { //Если строка пустая
         //Завершение программы с ошибкой
@@ -33,7 +33,7 @@ void Airplane::In_Data(ifstream& ifst) {
 
     Flight_range = atoi(Temp_Str.c_str());
 
-    getline(ifst, Temp_Str); //Чтение грузоподъемности
+    getline(Ifst, Temp_Str); //Чтение грузоподъемности
 
     if (Temp_Str == "") { //Если строка пустая
         //Завершение программы с ошибкой

@@ -17,8 +17,8 @@ class Ship : public Transport {
 	Type T;
 
 public:
-    void In_Data(ifstream& ifst); //Функция ввода информации о корабле
-    void Out_Data(int Speed, int Distance, double Cargo_weight, ofstream& ofst); //Функция вывода информации о корабле
+    void In_Data(ifstream& Ifst); //Функция ввода информации о корабле
+    void Out_Data(int Speed, int Distance, double Cargo_weight, ofstream& Ofst); //Функция вывода информации о корабле
     Ship() {};
 };
 

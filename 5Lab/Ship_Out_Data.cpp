@@ -1,23 +1,23 @@
 #include "Ship.h"
 
-void Ship::Out_Data(int Speed, int Distance, double Cargo_weight, ofstream& ofst) {
-    ofst << "It's a Ship with Displacement: " << Displacement << " thousands of tons" << endl;
+void Ship::Out_Data(int Speed, int Distance, double Cargo_weight, ofstream& Ofst) {
+    Ofst << "It's a Ship with Displacement: " << Displacement << " thousands of tons" << endl;
 
-    ofst << "Its Type is ";
+    Ofst << "Its Type is ";
 
     if (T == LINER) {
-        ofst << "Liner";
+        Ofst << "Liner";
     }
     else if (T == TOWBOAT) {
-        ofst << "Towboat";
+        Ofst << "Towboat";
     }
     else if (T = TANKER) {
-        ofst << "Tanker";
+        Ofst << "Tanker";
     }
 
-    ofst << endl;
+    Ofst << endl;
 
-    ofst << "Its Speed is " << Speed << " kilometers/hour" << endl;
-    ofst << "And Distance is " << Distance << " kilometers" << endl;
-    ofst << "Its Cargo Weight is " << Cargo_weight << " kilograms" << endl;
+    Ofst << "Its Speed is " << Speed << " kilometers/hour" << endl;
+    Ofst << "And Distance is " << Distance << " kilometers" << endl;
+    Ofst << "Its Cargo Weight is " << Cargo_weight << " kilograms" << endl;
 }

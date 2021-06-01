@@ -8,29 +8,35 @@ int main(int argc, char* argv[]) {
             << endl;
         exit(1);
     }
+    
+    ifstream Ifst(argv[1]);
 
-    ifstream ifst(argv[1]);
-    ofstream ofst(argv[2]);
+    if (!Ifst) { //проверка на то, удалось ли открыть файл
+        cout << "input.txt is incorrect!";
+        exit(1);
+    }
+
+    ofstream Ofst(argv[2]);
 
     cout << "Start" << endl;
 
     Container C; //Объявление контейнера
 
-    C.In(ifst); //Ввод элементов контейнера
+    C.In(Ifst); //Ввод элементов контейнера
 
     C.Sort(); //Сортировка контейнера
 
-    ofst << "Filled and sorted container. " << endl;
+    Ofst << "Filled and sorted container. " << endl;
 
-    C.Out(ofst); //Вывод контейнера
+    C.Out(Ofst); //Вывод контейнера
 
-    C.Out_Only_Airplane(ofst); //Вывод только самолетов
+    C.Out_Only_Airplane(Ofst); //Вывод только самолетов
 
     C.Clear(); //Очистка контейнера
 
-    ofst << "Empty container. " << endl;
+    Ofst << "Empty container. " << endl;
 
-    C.Out(ofst); //Вывод контейнера
+    C.Out(Ofst); //Вывод контейнера
 
     cout << "Stop" << endl;
 

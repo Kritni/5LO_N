@@ -7,8 +7,8 @@
 class Train : public Transport {
     int Сars_amount; //Число вагонов
 public:
-    void In_Data(ifstream& ifst); //Функция ввода информации о поезде
-    void Out_Data(int Speed, int Distance, double Cargo_weight, ofstream& ofst); //Функция вывода информации о поезде
+    void In_Data(ifstream& Ifst); //Функция ввода информации о поезде
+    void Out_Data(int Speed, int Distance, double Cargo_weight, ofstream& Ofst); //Функция вывода информации о поезде
     Train() {};
 };
 

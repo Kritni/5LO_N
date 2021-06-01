@@ -3,10 +3,10 @@
 #include <string>
 #include <iostream>
 
-void Train::In_Data(ifstream& ifst) {
+void Train::In_Data(ifstream& Ifst) {
     string Temp_Str = ""; //Временный буфер для чтения данных из файла
 
-    getline(ifst, Temp_Str); //Чтение числа вагонов
+    getline(Ifst, Temp_Str); //Чтение числа вагонов
 
     if (Temp_Str == "") { //Если строка пустая
         //Завершение программы с ошибкой

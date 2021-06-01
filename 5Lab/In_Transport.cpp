@@ -6,17 +6,17 @@
 #include <string>
 #include <iostream>
 
-Transport* Transport::In(ifstream& ifst) {
+Transport* Transport::In(ifstream& Ifst) {
     Transport* T;
     string Temp_Str = ""; //Временный буфер для чтения данных из файла
 
-    getline(ifst, Temp_Str); //Чтение идентификатора транспорта
+    getline(Ifst, Temp_Str); //Чтение идентификатора транспорта
 
     //Проверка того, что файл либо содержит ошибочный идентификтор Транспорта,
     //либо не содержит его вовсе
     if ((Temp_Str != "1") && (Temp_Str != "2") && (Temp_Str != "3")) {
         //Возможно идентификатора нет, потому что это конец файл
-        if (ifst.peek() == EOF) {
+        if (Ifst.peek() == EOF) {
             return 0;
         }
         else { //В ином случае идентификатор отсутствует вовсе, либо он ошибочен
@@ -41,9 +41,11 @@ Transport* Transport::In(ifstream& ifst) {
         return 0;
     }
 
-    T->In_Data(ifst);
+    T->In_Data(Ifst);
 
-    getline(ifst, Temp_Str); //Чтение скорости
+    Temp_Str = ""; //!!
+
+    getline(Ifst, Temp_Str); //Чтение скорости
 
     if (Temp_Str == "") { //Если строка пустая
         //Завершение программы с ошибкой
@@ -70,7 +72,7 @@ Transport* Transport::In(ifstream& ifst) {
 
     T->Speed = atoi(Temp_Str.c_str());
 
-    getline(ifst, Temp_Str); //Чтение расстояния м/у пунктами отправления и назначения
+    getline(Ifst, Temp_Str); //Чтение расстояния м/у пунктами отправления и назначения
 
     if (Temp_Str == "") { //Если строка пустая
         //Завершение программы с ошибкой
@@ -95,7 +97,7 @@ Transport* Transport::In(ifstream& ifst) {
 
     T->Distance = atoi(Temp_Str.c_str());
 
-    getline(ifst, Temp_Str); //Чтение массы грузы
+    getline(Ifst, Temp_Str); //Чтение массы грузы
 
     if (Temp_Str == "") { //Если строка пустая
         //Завершение программы с ошибкой

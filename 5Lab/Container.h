@@ -8,11 +8,11 @@ class Container {
     Node* Head, * Tail; //Указатели на "голову" и "хвост" контейнера
     int Len; //Размерность контейнера
 public:
-    void In(ifstream& ifst); //Функция ввода элемента в контейнер
-    void Out(ofstream& ofst); //Функция вывода элемента из контейнера
+    void In(ifstream& Ifst); //Функция ввода элемента в контейнер
+    void Out(ofstream& Ofst); //Функция вывода элемента из контейнера
     void Clear(); //Функция очищения контейнера
     void Sort(); //Функция сортировки контейнера
-    void Out_Only_Airplane(ofstream& ofst); //Функция вывода только самолетов
+    void Out_Only_Airplane(ofstream& Ofst); //Функция вывода только самолетов
     Container(); //Конструктор
     ~Container() { Clear(); } //Деструктор
 };

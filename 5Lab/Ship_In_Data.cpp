@@ -3,10 +3,10 @@
 #include <string>
 #include <iostream>
 
-void Ship::In_Data(ifstream& ifst) {
+void Ship::In_Data(ifstream& Ifst) {
     string Temp_Str = ""; //Временный буфер для чтения данных из файла
 
-    getline(ifst, Temp_Str); //Чтение водоизмещения
+    getline(Ifst, Temp_Str); //Чтение водоизмещения
 
     if (Temp_Str == "") { //Если строка пустая
         //Завершение программы с ошибкой
@@ -33,7 +33,7 @@ void Ship::In_Data(ifstream& ifst) {
 
     Displacement = atoi(Temp_Str.c_str());
 
-    getline(ifst, Temp_Str); //Чтение типа коробля
+    getline(Ifst, Temp_Str); //Чтение типа коробля
 
     if (Temp_Str == "Liner") {
         T = LINER;
